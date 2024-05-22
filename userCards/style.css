@@ -1,0 +1,52 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+#container{
+
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    
+}
+
+h1{
+    padding-bottom: 20px;
+}
+
+#container1{
+    
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 20px;
+    text-align: left;
+}
+
+#container1 > div{
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+#container1 > div > p{
+    padding: 10px 10px 10px 20px;
+}
+
+#user_details{
+    display: flex;
+    flex-direction: column;
+    max-width: 300px;
+    /* border: 3px solid red; */
+    margin: auto;
+    align-items: start;
+    padding-left: 50px;
+    margin-bottom: 50px;
+}
+
+input[type="submit"]{
+    max-width: 200px;
+    padding: 5px;
+}
+
+label{
+    margin-bottom: 10px;
+}

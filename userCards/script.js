@@ -60,4 +60,56 @@ const user = [
       email: "Rey.Padberg@karina.biz",
     },
   ];
+
+
+
+
+
+const createCard = (el) =>{
+
+  let containerDiv = document.getElementById("container1");
+  let card = document.createElement("div"); 
+  let names = document.createElement("p");
+  let username = document.createElement("p");
+  let email = document.createElement("p");
+
+  names.textContent = `Name: ${el.name}`;
+  username.textContent = `Username: ${el.username}`;
+  email.textContent = `Email: ${el.email}`;
+  card.append(names,username,email);
+  containerDiv.append(card);
+};
+user.forEach((el)=>createCard(el));
+
+
+let profile = document.getElementById("name");
+let user_id = document.getElementById("username");
+let email_add = document.getElementById("email");
+let submitbtn = document.getElementById("submit")
+
+submitbtn.addEventListener("click",(e)=>{
+  e.preventDefault();
+  let containerDiv = document.getElementById("container1");
+  let Card = document.createElement("div");
+  let n = document.createElement("p");
+  let u_id = document.createElement("p");
+  let e_id = document.createElement("p");
+
+  n.textContent = `Name: ${profile.value}`;
+  u_id.textContent = `Username: ${user_id.value}`;
+  e_id.textContent = `Email: ${email_add.value}`;
+
+  Card.append(n,u_id,e_id);
+  containerDiv.append(Card);
   
+  profile.value="";
+  user_id.value="";
+  email_add.value="";
+  
+});
+
+
+
+
+
+
