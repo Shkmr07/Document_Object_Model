@@ -267,7 +267,6 @@ function callBack(product){
     product.forEach((el)=>generateCard(el))
 }
 
-callBack(products);
 
 products.forEach((el)=>generateCard(el));
 
