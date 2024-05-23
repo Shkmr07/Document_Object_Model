@@ -27,3 +27,19 @@
     padding-bottom: 5px;
 }
 
+@media screen and (max-width: 720px) {
+
+    #sub_main{
+        grid-template-columns: repeat(2,1fr);
+    }
+    
+}
+
+
+@media screen and (max-width: 480px) {
+
+    #sub_main{
+        grid-template-columns: repeat(1,1fr);
+    }
+    
+}
