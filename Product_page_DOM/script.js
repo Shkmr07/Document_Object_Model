@@ -276,6 +276,27 @@ const filterBy = (el) =>{
     return products.filter((val)=> val.category === el);
 }
 
+const sortedAsc = (el) =>{
+    products.sort((a,b)=>a[el]-b[el]);
+    return products
+}
+
+const sortedDec = (el) =>{
+    products.sort((a,b)=>b[el]-a[el]);
+    return products
+}
+
+const sorted_rate_Asc = () =>{
+    products.sort((a, b) => a.rating["rate"] - b.rating["rate"]);
+    return products;
+}
+
+const sorted_rate_Dec = () =>{
+    products.sort((a, b) => b.rating["rate"] - a.rating["rate"]);
+    return products;
+}
+
+
 document.getElementById("filter").addEventListener("change",(e)=>{
 
     let selectedOption = e.target.value;
@@ -292,6 +313,34 @@ document.getElementById("filter").addEventListener("change",(e)=>{
         callBack(filter_category_womens);
     }
 
+    else if (selectedOption === "electronics"){
+        let  filter_category_electronics = filterBy(selectedOption);
+        callBack(filter_category_electronics);
+    }
+     
+    else if (selectedOption === "jewelery"){
+        let  filter_category_jewelery = filterBy(selectedOption);
+        callBack(filter_category_jewelery);
+    }
 
+    else if (selectedOption === "price/asc"){
+        let sorting_ascending = sortedAsc("price");
+        callBack(sorting_ascending)
+    }
+
+    else if (selectedOption === "price/dec"){
+        let sorted_decending = sortedDec("price");
+        callBack(sorted_decending);
+    }
+
+    else if (selectedOption === "popularity/asc"){
+        let sort_rating = sorted_rate_Asc();
+        callBack(sort_rating)
+    }
+
+    else if (selectedOption == "popularity/dec"){
+        let sort_rating_dec = sorted_rate_Dec();
+        callBack(sort_rating_dec);
+    }
     
 });
