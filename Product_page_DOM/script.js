@@ -263,5 +263,35 @@ const generateCard = (el) =>{
 
 }
 
+function callBack(product){
+    product.forEach((el)=>generateCard(el))
+}
+
+callBack(products);
+
 products.forEach((el)=>generateCard(el));
 
+const filterBy = (el) =>{
+ 
+    return products.filter((val)=> val.category === el);
+}
+
+document.getElementById("filter").addEventListener("change",(e)=>{
+
+    let selectedOption = e.target.value;
+    let sub_main = document.getElementById("sub_main");
+    sub_main.innerHTML="";
+
+    if (selectedOption === "men's clothing"){
+        let filter_category_Mens = filterBy(selectedOption);
+        callBack(filter_category_Mens);
+    }
+
+    else if (selectedOption === "women's clothing"){
+        let filter_category_womens = filterBy(selectedOption);
+        callBack(filter_category_womens);
+    }
+
+
+    
+});

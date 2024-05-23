@@ -9,6 +9,7 @@
     gap: 20px;
     width: 80%;
     margin: auto;
+    padding-top: 50px;
 }
 
 .card{
@@ -25,3 +26,4 @@
 .card > p,h4{
     padding-bottom: 5px;
 }
+
