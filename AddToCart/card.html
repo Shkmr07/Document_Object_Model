@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart Page</title>
+
+    <style>
+
+       *{
+        margin: 0px;
+        padding: 0px;
+        font-family: sans-serif,'Times New Roman', Times, serif;
+        font-size: 2vh;
+       }
+        table{
+            margin: auto;
+            border: 3px solid red;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        
+        td{
+            padding: 10px 50px;
+            border: 1px solid black;
+        }
+
+        button{
+            background-color: rgb(225, 95, 95);
+            color: rgba(255, 255, 255, 0.879);
+            border: none;
+            padding: 5px;
+            border-radius: 5px;
+        }
+            
+
+        #nav-bar > ul{
+        display: flex;
+        list-style:none;
+        justify-content: space-around;
+        font-weight: bold;
+        background:radial-gradient(rgb(66, 141, 105),rgb(37, 122, 95));
+        padding: 20px;
+    }
+
+    #nav-bar > ul > li:hover{
+        text-decoration: underline;
+        color: rgb(92, 222, 32);
+    }
+
+        
+    </style>
+</head>
+<body>
+    <div>
+
+        <nav id="nav-bar">
+            <ul>
+                <li id = "MovetoHome">HOME</li>
+                <li>CART</li>
+            </ul>
+        </nav>
+
+        <table>
+            <thead>
+                <tr>
+                    <td>Name</td>
+                    <td>Email</td>
+                    <td>Status</td>
+                </tr>
+            </thead>
+            <tr>
+                <td>Ayush</td>
+                <td>shkmrsing@gamail.com</td>
+                <td><button>Delete</button></td>
+            </tr>
+        </table>
+    </div>
+
+    <script src="./card.js"></script>
+</body>
+</html>
