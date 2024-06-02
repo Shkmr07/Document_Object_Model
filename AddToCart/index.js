@@ -63,25 +63,39 @@ let user = [
 
 let adding_product = document.getElementById("Products");
 
-function createCard({name,username,email}){
-
-    let div = document.createElement("div");
-    div.className = "card"
-    div.innerHTML = `
+function createCard({ id, name, username, email }) {
+  let div = document.createElement("div");
+  div.className = "card";
+  div.innerHTML = `
     <p id ="name">Name: <span>${name}</span></p>
     <p id ="username">Username: <span>${username}</span></p>
     <p id = "email">Email: <span>${email}</span></p>
-    <button class = "addtoCart">Add to Card</button>
- `
-    adding_product.appendChild(div);
+    <button class="addtoCart" data-name="${name}" data-email="${email}">Add to Cart</button>
+  `;
+  adding_product.appendChild(div);
+
+  div.querySelector(".addtoCart").addEventListener("click", (event) => {
+    let Name = event.target.getAttribute("data-name");
+    let Email = event.target.getAttribute("data-email");
+    let details = {
+      name: Name,
+      email: Email
+    };
+
+    let cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+    cartItems.push(details);
+    localStorage.setItem("cartItems", JSON.stringify(cartItems));
+  });
 }
 
-user.forEach((el)=> createCard(el));
+
+function addData(){
+  user.forEach((el)=> createCard(el));
+}
+addData();
+
 
 document.getElementById("MovetoCart").addEventListener("click",()=> window.location.href ="./card.html");
 
-document.querySelectorAll(".card > .addtoCart").forEach((el)=>el.addEventListener("click",()=>{
 
-  let name = document.getElementById("name")
-  console.log(name)
-}))
+
